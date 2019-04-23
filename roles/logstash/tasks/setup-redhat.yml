@@ -1,0 +1,23 @@
+- name: Add Elasticsearch GPG key.
+  rpm_key:
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add Logstash repository.
+  template:
+    src: logstash.repo.j2
+    dest: /etc/yum.repos.d/logstash.repo
+    mode: 0644
+
+- name: Install Logstash.
+  package:
+    name: logstash
+    state: present
+
+- name: yum install openjdk-1.8
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
+
+- name: Setup Logstash service unit file
+  command: /usr/share/logstash/bin/system-install /etc/logstash/startup.options systemd

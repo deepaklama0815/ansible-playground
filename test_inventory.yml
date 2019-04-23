@@ -1,0 +1,7 @@
+logstash_hosts:
+  hosts:
+    52.202.138.154:
+
+
+  vars:
+    logstash_version: 7.x

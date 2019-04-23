@@ -1,0 +1,14 @@
+---
+- name: Include OS Specific setup tasks
+  include: setup-redhat.yml
+
+- include: config.yml
+#- include: ssl.yml
+#- include: plugins.yml
+
+- name: Ensure Logstash is started and enabled on boot.
+  systemd:
+    name: logstash
+    daemon_reload: yes
+    state: started
+    enabled: yes

@@ -1,0 +1,1 @@
+ansible-playbook -i ../test_inventory.yml test_play.yml -u ec2-user --private-key=~/.ssh/id_rsa

@@ -7,7 +7,7 @@ logstash_ssl_certificate_file: ""
 logstash_ssl_key_file: ""
 
 logstash_elasticsearch_hosts:
-  - http://54.80.235.121:9200
+  - http://54.198.235.47:9200
 
 logstash_monitor_local_syslog: true
 
